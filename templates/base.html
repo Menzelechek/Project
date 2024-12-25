@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+        <!--<style>
+            .anchor-target {
+                font-family: 'Arial', sans-serif;
+            }
+        </style>-->
+        <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+
+    <div class="page">
+
+        <section class="parallax parallax-top"></section>
+
+        <header id="header" class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <div class="pic-main-menu">
+                    <img src="{{ url_for('static', filename = 'image/AITitlePic3.png') }}" style="margin-right: 10px;">
+                </div>
+                
+                <span class="fs-4">COMPUTER VISION</span>
+            </a>
+
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{ url_for('index')}}" class="nav-link" aria-current="page">Главная страница</a></li>
+            </ul>
+        </header>
+
+        <div id="menu-toggle">
+            <button id="toggleButton" class="btn btn-primary">☰</button>
+        </div>
+
+        <div id = "sidebar" class = "sidebar" style="width: 380px;">
+
+            <a href="/"
+                class="d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom">
+                <svg class="bi pe-none me-2" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="large-title fw-semibold">Путеводитель</span>
+            </a>
+            <div class="list-group list-group-flush border-bottom scrollarea">
+                <a href="#heading1" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                           
+                        </div>
+                        <strong class="mb-1">Введение в COMPUTER VISION</strong>
+                        <!--<small>Wed</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small">
+                    </div>
+                </a>
+                <a href="#heading2" class="list-group-item list-group-item-action py-3 lh-sm">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                            
+                        </div>
+                        <strong class="mb-1" id="specific-element-2">Технологии и алгоритмы компьютерного зрения</strong>
+                        <!--<small class="text-body-secondary">Tues</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small" id="specific-interior-element-2">
+                    </div>
+                </a>
+                <a href="#heading3" class="list-group-item list-group-item-action py-3 lh-sm">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                            
+                        </div>
+                        <strong class="mb-1">Применения компьютерного зрения</strong>
+                        <!--<small class="text-body-secondary">Tues</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small">
+                    </div>
+                </a>
+                <a href="#heading4" class="list-group-item list-group-item-action py-3 lh-sm">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                            
+                        </div>
+                        <strong class="mb-1">Текущие вызовы и ограничения</strong>
+                        <!--<small class="text-body-secondary">Tues</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small">
+                    </div>
+                </a>
+                <a href="#heading5" class="list-group-item list-group-item-action py-3 lh-sm">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                          
+                        </div>
+                        <strong class="mb-1">Перспективы развития компьютерного зрения</strong>
+                        <!--<small class="text-body-secondary">Tues</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small">
+                    </div>
+                </a>
+                <a href="#heading8" class="list-group-item list-group-item-action py-3 lh-sm">
+                    <div class="d-flex w-100 align-items-center justify-content-start">
+                        <div class="pic-left-menu">
+                           
+                        </div>
+                        <strong class="mb-1">ЧАТ-БОТ</strong>
+                        <!--<small class="text-body-secondary">Tues</small>-->
+                    </div>
+                    <div class="col-10 mb-1 small">
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="content" class="content">
+            {% block content %}{% endblock %}
+        </div>
+        
+
+        <footer id="footer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <div class="col-md-4 d-flex align-items-center">
+                <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                    <svg class="bi" width="30" height="24">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                </a>
+                <span class="mb-3 mb-md-0 text-muted">© 2024 Company, Inc</span>
+            </div>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"></use>
+                        </svg></a></li>
+                <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"></use>
+                        </svg></a></li>
+            </ul>
+
+        </footer>
+
+        <section class="parallax parallax-bottom"></section>
+
+    </div>
+    
+    <script>
+        // JavaScript для скрытия и раскрытия меню
+        document.getElementById("toggleButton").onclick = function() {
+            document.getElementById("sidebar").classList.toggle("collapsed");
+            document.getElementById("content").classList.toggle("collapsed");
+            document.getElementById("header").classList.toggle("collapsed");
+            document.getElementById("footer").classList.toggle("collapsed");
+        };
+    </script>
+
+<script>
+    document.getElementById("gpt4freeForm").addEventListener("submit", submitQuery);
+
+    function submitQuery(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        
+        const formData = new FormData(document.getElementById("gpt4freeForm"));
+        fetch("/gpt4free_query", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            const chatBox = document.getElementById("chat-box");
+
+            // Отображение сообщения пользователя
+            chatBox.innerHTML += `<p><strong>Вы:</strong> ${formData.get("user_input")}</p>`;
+            // Отображение ответа от AI
+            chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
+            
+            // Прокручиваем чат вниз
+            chatBox.scrollTop = chatBox.scrollHeight;
+            
+            // Очищаем поле ввода
+            document.getElementById("gpt4freeForm").reset();
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    function clearChat() {
+        // Очищаем содержимое чат-бокса
+        document.getElementById("chat-box").innerHTML = "";
+    }
+</script>
+
+
+
+</body>
+
+</html>
